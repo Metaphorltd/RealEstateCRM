@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:6
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    working_dir: /app/server
+    environment:
+      - NODE_ENV=production
+      - DB_URL=mongodb://mongo:27017
+      - DB=Prolink
+    ports:
+      - "5001:5001"
+    depends_on:
+      - mongo
+    volumes:
+      - ./server/uploads:/app/server/uploads
+
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    depends_on:
+      - server
+
+volumes:
+  mongo_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: /c/repo/data
+      o: bind
