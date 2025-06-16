@@ -7,7 +7,7 @@ COPY package*.json ./
 RUN npm install
 ENV NODE_OPTIONS=--max_old_space_size=4096
 
-ARG REACT_APP_BASE_URL=http://localhost:5001/
+ARG REACT_APP_BASE_URL=https://api-crm.metaphorltd.com/
 ENV REACT_APP_BASE_URL=$REACT_APP_BASE_URL
 
 COPY . .

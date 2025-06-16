@@ -2,11 +2,11 @@
 FROM node:18
 
 # Set working directory
-WORKDIR /app/server
-
+# WORKDIR /app/server
+WORKDIR /app
 # Copy server files
 COPY . .
-COPY ../package*.json /app/
+# COPY package*.json /app/
 
 # Install dependencies from root package.json
 WORKDIR /app
