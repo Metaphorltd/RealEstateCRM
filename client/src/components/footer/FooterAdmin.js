@@ -44,20 +44,20 @@ export default function Footer() {
             fontWeight="500"
             color={textColor}
             target="_blank"
-            href="https://prolinkinfotech.com/"
+            href="https://metaphorltd.com/"
           >
             {" "}
-            Prolink Infotech.
+            Metaphor Technologies.
           </Link>{" "}
           Need help, facing issues, or looking for a new feature? Contact us for
           paid support and services at{" "}
           <Link
-            href="mailto:alternatecrm@gmail.com"
+            href="mailto:contact@metaphorltd.com"
             fontWeight="500"
             color={textColor}
             target="_blank"
           >
-            alternatecrm@gmail.com
+            contact@metaphorltd.com
           </Link>
         </Text>
       </Text>
